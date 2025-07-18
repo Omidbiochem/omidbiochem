@@ -1,72 +1,187 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>سایت زیبا</title>
-    <link href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Vazirmatn', sans-serif;
-            background: linear-gradient(to bottom, #e3f2fd, #90caf9);
-            text-align: center;
-            padding: 20px;
-        }
-        .container {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            max-width: 600px;
-        }
-        h1 {
-            color: #2e7d32;
-            font-weight: bold;
-        }
-        .quote {
-            font-size: 20px;
-            color: #1e88e5;
-            margin-bottom: 20px;
-        }
-        .articles a {
-            display: block;
-            margin: 10px 0;
-            font-size: 18px;
-            text-decoration: none;
-            color: #1565c0;
-            transition: 0.3s;
-        }
-        .articles a:hover {
-            color: #0d47a1;
-            transform: scale(1.1);
-        }
-        .back-link {
-            margin-top: 20px;
-            display: inline-block;
-            padding: 10px 15px;
-            background: #ff8a65;
-            color: white;
-            text-decoration: none;
-            border-radius: 10px;
-            transition: 0.3s;
-        }
-        .back-link:hover {
-            background: #d84315;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Omid Biochem | امید جودی</title>
+  <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Vazirmatn', sans-serif;
+      background: linear-gradient(to bottom, #cce5ff, #e6f0ff);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding: 20px;
+    }
+    header {
+      width: 100%;
+      background-color: #ffffffcc;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+    .logo {
+      font-size: 22px;
+      color: #2d8659;
+      font-weight: bold;
+    }
+    nav a {
+      margin-left: 20px;
+      text-decoration: none;
+      color: #003366;
+      font-weight: 500;
+    }
+    .container {
+      background: white;
+      border-radius: 16px;
+      padding: 40px 30px;
+      max-width: 800px;
+      width: 100%;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+    h1 {
+      color: #2d8659;
+      text-align: center;
+    }
+    .quran {
+      color: #0066cc;
+      font-size: 20px;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .intro, .section-title {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+      font-size: 18px;
+    }
+    .articles {
+      text-align: right;
+      margin: 20px 0;
+    }
+    .articles a {
+      display: block;
+      margin: 10px 0;
+      color: #003366;
+      text-decoration: none;
+      font-size: 16px;
+    }
+    .btn {
+      background-color: #ff9966;
+      color: white;
+      border: none;
+      padding: 12px 28px;
+      border-radius: 8px;
+      font-size: 15px;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    .profile {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin: 20px auto;
+      display: block;
+      border: 4px solid #2d8659;
+    }
+    footer {
+      margin-top: auto;
+      padding: 20px;
+      background-color: #f0f8ff;
+      width: 100%;
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+    }
+    .card {
+      background-color: #f9f9f9;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      padding: 20px;
+      margin: 20px 0;
+    }
+    .card h3 {
+      color: #2d8659;
+      margin-bottom: 10px;
+    }
+    .card p {
+      color: #444;
+      line-height: 1.6;
+    }
+    @media screen and (max-width: 600px) {
+      .container {
+        padding: 20px;
+      }
+      nav a {
+        margin-left: 10px;
+        font-size: 14px;
+      }
+      .btn {
+        padding: 10px 20px;
+        font-size: 14px;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <h1>آیه قرآن</h1>
-        <p class="quote">وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ...</p>
-        <h2>مقالات من</h2>
-        <div class="articles">
-            <a href="#">عنوان مقاله ۱</a>
-            <a href="#">عنوان مقاله ۲</a>
-            <a href="#">عنوان مقاله ۳</a>
-        </div>
-        <a href="#" class="back-link">بازگشت به صفحه اصلی</a>
+  <header>
+    <div class="logo">Omid Biochem</div>
+    <nav>
+      <a href="#intro">درباره من</a>
+      <a href="#articles">مقالات</a>
+      <a href="#contact">تماس با من</a>
+    </nav>
+  </header>
+
+  <div class="container">
+    <img src="profile.jpg" alt="Profile" class="profile">
+    <h1>امید جودی</h1>
+    <p class="intro" id="intro">دانشجوی دکترای بیوشیمی بالینی، پژوهشگر حوزه تشخیص مولکولی و علوم آزمایشگاهی</p>
+    <div class="quran">وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ...</div>
+
+    <div class="section-title" id="articles">مقالات من</div>
+    <div class="articles">
+      <a href="maghale1.pdf" target="_blank">مقاله ۱: تشخیص مولکولی سرطان</a>
+      <a href="maghale2.pdf" target="_blank">مقاله ۲: نقش lncRNAها در گلیوبلاستوما</a>
+      <a href="maghale3.pdf" target="_blank">مقاله ۳: طراحی کیت تشخیص ناباروری مردان</a>
     </div>
+
+    <div class="section-title">توضیحات بیشتر</div>
+    <div class="card">
+      <h3>زمینه پژوهشی من</h3>
+      <p>
+        تمرکز پژوهش من بر بررسی مسیرهای سیگنالینگ در ماکروفاژها، تحلیل بیوانفورماتیکی، طراحی مدل‌های مولکولی و همچنین توسعه کیت‌های تشخیص سریع و قابل‌حمل در حوزه سلامت است.
+      </p>
+    </div>
+
+    <div class="card">
+      <h3>پروژه‌های در حال انجام</h3>
+      <p>
+        - بررسی نقش ژن CBL در پلاریزاسیون ماکروفاژ<br>
+        - طراحی آنتی‌سنس RNA برای مهار بیان ژن‌های التهابی<br>
+        - مدلسازی شبکه‌ای در COPASI و SimBiology برای بررسی دینامیک سیگنالینگ
+      </p>
+    </div>
+
+    <a href="index.html" class="btn">بازگشت به صفحه اصلی</a>
+  </div>
+
+  <footer id="contact">
+    تماس با من: omidbiochem@gmail.com | تلگرام: @omidbiochem
+  </footer>
 </body>
 </html>
