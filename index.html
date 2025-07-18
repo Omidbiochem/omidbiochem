@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Omid Biochem | امید جودی</title>
+  <title>امید جودی | Omid Biochem</title>
   <link href="https://fonts.googleapis.com/css2?family=Vazirmatn&display=swap" rel="stylesheet">
   <style>
     * {
@@ -18,7 +18,6 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      justify-content: flex-start;
       padding: 20px;
     }
     header {
@@ -41,99 +40,75 @@
       color: #003366;
       font-weight: 500;
     }
-    .container {
+    .main-section {
       background: white;
       border-radius: 16px;
-      padding: 40px 30px;
-      max-width: 800px;
+      padding: 40px;
+      max-width: 900px;
       width: 100%;
       box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
       margin-top: 30px;
+      display: flex;
+      align-items: flex-start;
+      gap: 30px;
     }
-    h1 {
+    .profile {
+      flex: 1;
+      text-align: center;
+    }
+    .profile img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 5px solid #2d8659;
+    }
+    .content {
+      flex: 2;
+    }
+    .name {
+      font-size: 28px;
       color: #2d8659;
-      text-align: center;
+      margin-bottom: 10px;
+      font-weight: bold;
     }
-    .quran {
-      color: #0066cc;
-      font-size: 20px;
-      margin: 20px 0;
-      text-align: center;
-    }
-    .intro, .section-title {
-      text-align: center;
-      margin-bottom: 20px;
+    .bio {
+      font-size: 17px;
       color: #333;
-      font-size: 18px;
+      margin-bottom: 20px;
+      line-height: 1.8;
     }
-    .articles {
+    .quran-card {
+      background-color: #f5f5f5;
+      border: 1px solid #ddd;
+      padding: 20px;
+      border-radius: 12px;
       text-align: right;
-      margin: 20px 0;
+      margin-top: 20px;
+    }
+    .quran-card .ayah {
+      font-size: 18px;
+      color: #003366;
+      margin-bottom: 10px;
+      line-height: 2;
+    }
+    .quran-card .translation {
+      font-size: 15px;
+      color: #555;
+    }
+    .section-title {
+      margin-top: 30px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #2d8659;
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 5px;
     }
     .articles a {
       display: block;
-      margin: 10px 0;
+      margin-top: 8px;
       color: #003366;
       text-decoration: none;
-      font-size: 16px;
-    }
-    .btn {
-      background-color: #ff9966;
-      color: white;
-      border: none;
-      padding: 12px 28px;
-      border-radius: 8px;
-      font-size: 15px;
-      cursor: pointer;
-      text-decoration: none;
-      display: inline-block;
-      margin-top: 20px;
-    }
-    .profile {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin: 20px auto;
-      display: block;
-      border: 4px solid #2d8659;
-    }
-    footer {
-      margin-top: auto;
-      padding: 20px;
-      background-color: #f0f8ff;
-      width: 100%;
-      text-align: center;
-      color: #666;
-      font-size: 14px;
-    }
-    .card {
-      background-color: #f9f9f9;
-      border: 1px solid #ddd;
-      border-radius: 10px;
-      padding: 20px;
-      margin: 20px 0;
-    }
-    .card h3 {
-      color: #2d8659;
-      margin-bottom: 10px;
-    }
-    .card p {
-      color: #444;
-      line-height: 1.6;
-    }
-    @media screen and (max-width: 600px) {
-      .container {
-        padding: 20px;
-      }
-      nav a {
-        margin-left: 10px;
-        font-size: 14px;
-      }
-      .btn {
-        padding: 10px 20px;
-        font-size: 14px;
-      }
     }
   </style>
 </head>
@@ -147,41 +122,36 @@
     </nav>
   </header>
 
-  <div class="container">
-    <img src="profile.jpg" alt="Profile" class="profile">
-    <h1>امید جودی</h1>
-    <p class="intro" id="intro">دانشجوی دکترای بیوشیمی بالینی، پژوهشگر حوزه تشخیص مولکولی و علوم آزمایشگاهی</p>
-    <div class="quran">وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ...</div>
-
-    <div class="section-title" id="articles">مقالات من</div>
-    <div class="articles">
-      <a href="maghale1.pdf" target="_blank">مقاله ۱: تشخیص مولکولی سرطان</a>
-      <a href="maghale2.pdf" target="_blank">مقاله ۲: نقش lncRNAها در گلیوبلاستوما</a>
-      <a href="maghale3.pdf" target="_blank">مقاله ۳: طراحی کیت تشخیص ناباروری مردان</a>
+  <div class="main-section">
+    <div class="profile">
+      <img src="profile.jpg" alt="عکس امید جودی">
     </div>
-
-    <div class="section-title">توضیحات بیشتر</div>
-    <div class="card">
-      <h3>زمینه پژوهشی من</h3>
-      <p>
-        تمرکز پژوهش من بر بررسی مسیرهای سیگنالینگ در ماکروفاژها، تحلیل بیوانفورماتیکی، طراحی مدل‌های مولکولی و همچنین توسعه کیت‌های تشخیص سریع و قابل‌حمل در حوزه سلامت است.
-      </p>
+    <div class="content">
+      <div class="name">امید جودی</div>
+      <div class="bio">
+        دکترای بیوشیمی بالینی<br>
+        پژوهشگر در زمینه نورودژنراسیون، التهاب و مسیرهای سیگنالینگ<br>
+        بیوانفورماتیک، زیست‌شناسی سامانه‌ای و مدلسازی محاسباتی<br>
+        متخصص علوم آزمایشگاهی پزشکی<br>
+        مسئول سابق بخش هورمون و میکروبیولوژی – آزمایشگاه امام سجاد<br>
+        ساکن تهران، ایران
+      </div>
+      <div class="quran-card">
+        <div class="ayah">«وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ فَلْيَسْتَجِيبُوا لِي وَلْيُؤْمِنُوا بِي لَعَلَّهُمْ يَرْشُدُونَ»</div>
+        <div class="translation">آیه ۱۸۶ سوره بقره</div>
+      </div>
     </div>
-
-    <div class="card">
-      <h3>پروژه‌های در حال انجام</h3>
-      <p>
-        - بررسی نقش ژن CBL در پلاریزاسیون ماکروفاژ<br>
-        - طراحی آنتی‌سنس RNA برای مهار بیان ژن‌های التهابی<br>
-        - مدلسازی شبکه‌ای در COPASI و SimBiology برای بررسی دینامیک سیگنالینگ
-      </p>
-    </div>
-
-    <a href="index.html" class="btn">بازگشت به صفحه اصلی</a>
   </div>
 
-  <footer id="contact">
-    تماس با من: omidbiochem@gmail.com | تلگرام: @omidbiochem
-  </footer>
+  <div class="main-section" id="articles">
+    <div class="content">
+      <div class="section-title">مقالات من</div>
+      <div class="articles">
+        <a href="maghale1.pdf" target="_blank">مقاله ۱: تشخیص مولکولی سرطان</a>
+        <a href="maghale2.pdf" target="_blank">مقاله ۲: نقش lncRNAها در گلیوبلاستوما</a>
+        <a href="maghale3.pdf" target="_blank">مقاله ۳: طراحی کیت تشخیص ناباروری مردان</a>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
