@@ -11,6 +11,9 @@
       margin: 0;
       padding: 0;
     }
+    html {
+      scroll-behavior: smooth;
+    }
     body {
       font-family: 'Vazirmatn', sans-serif;
       background: linear-gradient(to bottom, #cce5ff, #e6f0ff);
@@ -20,17 +23,15 @@
       align-items: center;
       padding: 20px;
     }
-      header {
-  width: 100%;
-  background-color: #ffffffcc;
-  padding: 15px 30px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row-reverse; /* 👈 این خط جدید */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-
+    header {
+      width: 100%;
+      background-color: #ffffffcc;
+      padding: 15px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      flex-direction: row-reverse; /* 👈 اینم خط جدید */
     }
     .logo {
       font-size: 22px;
@@ -115,6 +116,11 @@
       color: #003366;
       text-decoration: none;
     }
+    .contact-info {
+      font-size: 16px;
+      color: #333;
+      line-height: 2;
+    }
   </style>
 </head>
 <body>
@@ -128,11 +134,11 @@
   </header>
 
   <div class="quran-top">
-    <div class="ayah">«وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ فَلْيَسْتَجِيبُوا لِي وَلْيُؤْمِنُوا بِي لَعَلَّهُمْ يَرْشُدُونَ»</div>
-    <div class="translation">ای پیامبر هرگاه بندگانم از تو درباره من بپرسند، بگو که من نزدیکم، دعاى دعا کننده را به هنگامى که مرا مى‌خواند پاسخ مى‌گویم. پس باید دعوت مرا بخوانند و به من ایمان بیاورند، تا به سعادت راه یابند<br>آیه ۱۸۶ سوره بقره</div>
+    <div class="ayah">«وَإِذَا سَأَلَكَ عِبَادِي عَنِّي فَإِنِّي قَرِيبٌ أُجِيبُ دَعْوَةَ الدَّاعِ إِذَا دَعَانِ...»</div>
+    <div class="translation">ای پیامبر هرگاه بندگانم از تو درباره من بپرسند، بگو که من نزدیکم...</div>
   </div>
 
-  <div class="main-section">
+  <div class="main-section" id="intro">
     <div class="profile">
       <img src="profile.jpg" alt="عکس امید جودی">
     </div>
@@ -148,15 +154,28 @@
       </div>
     </div>
   </div>
+
   <div class="main-section" id="articles">
     <div class="content">
       <div class="section-title">مقالات من</div>
       <div class="articles">
         <a href="10.1016_j_jddst.2022.103868_rvnk.pdf" target="_blank">مقاله ۱: لوسمی لنفوبلاستیک حاد</a>
-<a href="10.1016_j_mrfmmm.2022.111776_kks1-PubMed.pdf" target="_blank">مقاله ۲: چرخه ی سلولی و درمان سرطان </a>
-<a href="jcla.24170.pdf" target="_blank">مقاله ۳: مالتیپل اسکلروز و سطح سرمی لپتین ارکسی</a>
-<a href="joodikhanghah2020.pdf" target="_blank">مقاله ۴: فاکتورهای تشخیصی در مالیجیل اسکالرو</a>
-<a href="s11033-022-08171-w-PubMed.pdf" target="_blank">مقاله ۵: درمان سرطان پستان با نانوذرا</a>
+        <a href="10.1016_j_mrfmmm.2022.111776_kks1-PubMed.pdf" target="_blank">مقاله ۲: چرخه ی سلولی و درمان سرطان</a>
+        <a href="jcla.24170.pdf" target="_blank">مقاله ۳: مالتیپل اسکلروز و سطح سرمی لپتین ارکسی</a>
+        <a href="joodikhanghah2020.pdf" target="_blank">مقاله ۴: فاکتورهای تشخیصی در مالیجیل اسکالرو</a>
+        <a href="s11033-022-08171-w-PubMed.pdf" target="_blank">مقاله ۵: درمان سرطان پستان با نانوذرا</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-section" id="contact">
+    <div class="content">
+      <div class="section-title">تماس با من</div>
+      <div class="contact-info">
+        ایمیل: Omidmedbiochem@gmail.com<br>
+        تلگرام: @omidbiochem<br>
+        وبسایت: <a href="https://omidbiochem.github.io/omidbiochem" target="_blank">omidbiochem.github.io</a><br>
+        محل سکونت: تهران، ایران
       </div>
     </div>
   </div>
