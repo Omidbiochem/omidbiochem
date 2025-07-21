@@ -1313,3 +1313,38 @@ section,
   flex-direction: column;
   justify-content: flex-start;
 }
+.verse-container {
+  text-align: center;
+  margin: 2px 0;   
+  padding:  0;    
+  direction: rtl;
+}
+.verse-container .arabic {
+  font-family: "Scheherazade", serif;
+  font-size: 26px;
+  line-height: 1.7;
+  color: #333;
+    margin-bottom: 3px;  
+}
+
+verse-en {
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  direction: ltr;
+  margin-top: 1px;
+  line-height: 1.5;
+
+}
+.english {
+  font-family: "Times New Roman", Times, serif;
+  margin: 2px 0;
+  line-height: 1.5;
+  }
+  .verse-container {
+  background: linear-gradient(to bottom, #f8f9fa, #e8f0f8);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 16px;
+  margin: 12px auto;
+  max-width: 900px;
+}
