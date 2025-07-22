@@ -1348,3 +1348,71 @@ verse-en {
   margin: 12px auto;
   max-width: 900px;
 }
+.top-widgets {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 20px 40px;
+  position: relative;
+  z-index: 10;
+}
+
+.clock-box,
+.message-box {
+  background-color: #ffffffee;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0,0,0,0.1);
+  padding: 16px;
+  width: 250px;
+  font-family: 'Vazirmatn', sans-serif;
+}
+
+
+#message-form input,
+#message-form textarea {
+  width: 100%;
+  margin-top: 8px;
+  margin-bottom: 10px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+}
+
+#message-form button {
+  width: 100%;
+  padding: 8px;
+  background-color: #00796b;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+.clock-box,
+.message-box {
+  min-height: 280px;
+  position: absolute;
+  top: 50px;         /* بالاتر بیاد */
+  width: 200px;      /* کوچکتر */
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  padding: 12px 16px;
+  z-index: 20;
+  font-family: 'B Homa', sans-serif !important;
+}
+
+}
+
+}
+
+.clock-box {
+  left: 7px;
+}
+
+.message-box {
+  right: 7px;
+}
+
+}
+
+}

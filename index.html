@@ -13,6 +13,10 @@
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
+  <link href="https://cdn.fontcdn.ir/Font/Persian/BNazanin/BNazanin.css" rel="stylesheet">
+  <link href="https://cdn.fontcdn.ir/Font/Persian/BHoma/BHoma.css" rel="stylesheet">
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Shabnam/Shabnam.css" rel="stylesheet">
+  <link href="https://cdn.fontcdn.ir/Font/Persian/Vazirmatn/Vazirmatn.css" rel="stylesheet
   <link href="https://fonts.googleapis.com" rel="preconnect">
   <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -93,10 +97,38 @@
   </header>
 
   <main class="main">
-
     <!-- Hero Section -->
+     <script>
+      
+  function updateClock() {
+    const now = new Date();
+    const time = now.toLocaleTimeString('fa-IR');
+    const date = now.toLocaleDateString('fa-IR');
+    document.getElementById('clock-digital').innerText = `${date} - ${time}`;
+  }
+  setInterval(updateClock, 1000);
+  updateClock();
+</script>
+  <div class="message-box">
+    <h3>ارسال پیام</h3>
+    <form id="message-form">
+      <input type="text" name="name" placeholder="نام شما" required>
+      <textarea name="message" placeholder="پیام شما..." required></textarea>
+      <button type="submit">ارسال</button>
+    </form>
+  </div>
+</div>
+
+     <div class="side-widgets">
+
+</script>
      <div style="text-align: center; margin-top: 20px;">
-  <audio controls>
+      <div class="verse-wrapper">
+  <div class="verse-side right">
+    <!-- تاریخ و ساعت -->
+    <div id="clock"></div>
+  </div>
+  <audio controls preload="none">
     <source src="assets/audio/welcome.mp3" type="audio/mpeg">
     Your browser does not support the audio element.
   </audio>
