@@ -701,12 +701,21 @@ I am passionate about innovative thinking, interdisciplinary collaboration, and 
 
 <!-- 👇 فرم اصلی -->
 <div class="feedback-box">
-  <h2>♾️ ارسال نظر</h2>
+  <h2>♾️ارسال نظر
+  </h2>
   <form id="feedbackForm">
     <input type="text" name="name" placeholder="نام شما" required>
     <textarea name="message" placeholder="نظر شما" rows="5" required></textarea>
     <button type="submit">📩 ارسال نظر</button>
-  </form>
+  
+  <p class="form-warning">
+  ⚠️ برای ارسال پیام باید فیلتر شکن خود را روشن کنید ⚠️
+</p>
+<p class="form-thank">
+  «نظرات و پیشنهادات ارزشمند شما برای من بسیار حائز اهمیت است و به من کمک می‌کند تا در تدریس و ارائه خدمات، بهترین کیفیت را ارائه دهم. از همراهی و بازخوردهای شما صمیمانه سپاسگزارم.»
+</p>
+
+
 </div>
 <script>
 document.getElementById("feedbackForm").addEventListener("submit", function(e) {
@@ -729,7 +738,7 @@ document.getElementById("feedbackForm").addEventListener("submit", function(e) {
       alert("✅ پیام شما با موفقیت ارسال شد.");
       this.reset();
     } else {
-      alert("❌ خطایی در ارسال پیام رخ داد.");
+      alert(" ❌ خطایی در ارسال پیام رخ داد.فیلتر شکن خود را روشن و دوباره امتحان کنید");
     }
   })
   .catch(error => {

@@ -1359,3 +1359,28 @@ verse-en {
   direction: rtl;
   text-align: right;
 }
+.form-warning {
+  font-size: 20px;
+  color: #620f06; /* قرمز هشدار */
+  text-align: center;
+  font-weight: bold;
+  margin-top: 16px;
+  direction: rtl;
+}
+.form-warning {
+  font-size: 18px;
+  color: #c0392b;
+  text-align: center;
+  font-weight: bold;
+  margin-top: 16px;
+  direction: rtl;
+}
+
+.form-thank {
+  font-size: 16px;
+  font-style: italic;
+  text-align: center;
+  color: #555;
+  margin-top: 10px;
+  direction: rtl;
+}
