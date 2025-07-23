@@ -1384,3 +1384,159 @@ verse-en {
   margin-top: 10px;
   direction: rtl;
 }
+/* 📱 موبایل */
+@media (max-width: 480px) {
+  .feedback-box {
+    padding: 16px;
+    margin: 12px;
+    border-radius: 16px;
+  }
+
+  .feedback-box input,
+  .feedback-box textarea,
+  .feedback-box button {
+    font-size: 16px;
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .form-warning {
+    font-size: 16px;
+    text-align: center;
+    color: #d35400;
+    margin-top: 12px;
+  }
+
+  .form-thank {
+    font-size: 14px;
+    font-style: italic;
+    text-align: center;
+    color: #444;
+    line-height: 1.8;
+    margin-top: 8px;
+  }
+}
+.services-list {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+}
+
+.menu-box {
+  padding: 0 !important;
+  margin: 0 !important;
+  width: 100%;
+  box-shadow: none; /* حذف سایه اگر داری */
+  border: none;     /* اختیاری برای حذف کادر */
+}
+.category {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 16px;
+  font-weight: 500;
+}
+.subcategory a {
+  font-family: 'Raleway', sans-serif !important;
+  font-size: 14px;
+}
+/* Ensure global box-sizing and font consistency */
+* {
+  box-sizing: border-box;
+}
+
+/* About Section Layout (Text + Image Side-by-Side) */
+.about-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-top: 2rem;
+}
+
+/* About Text */
+.about-text {
+  flex: 1;
+}
+
+/* About Image */
+.about-image img {
+  width: 220px;
+  height: 220px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Contact Button */
+.contact-btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: #b2e5b2; /* light green */
+  color: #000;
+  text-align: center;
+  border: none;
+  border-radius: 6px;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+.contact-btn:hover {
+  background-color: #9fd69f;
+}
+
+/* Accordion Style */
+.services-list {
+  max-width: 100%;
+  padding: 1rem;
+  overflow-x: hidden;
+}
+
+.category {
+  font-weight: bold;
+  padding: 0.75rem 1rem;
+  background-color: #eaf9fc;
+  border: 1px solid #c8e3f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.subcategory {
+  padding-left: 2rem;
+  margin: 0.25rem 0;
+}
+
+/* Responsive Breakpoint */
+@media (max-width: 768px) {
+  .about-section {
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
+
+  .about-text {
+    width: 100%;
+  }
+
+  .about-image img {
+    width: 160px;
+    height: 160px;
+    margin-bottom: 1rem;
+  }
+
+  .category {
+    font-size: 1rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .subcategory {
+    font-size: 0.9rem;
+    padding-left: 1.25rem;
+  }
+
+  .contact-btn {
+    width: 80%;
+  }
+}
+

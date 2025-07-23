@@ -108,35 +108,281 @@
     <section id="service-details" class="service-details section">
 
       <div class="container">
+<div class="row justify-content-center">
+  <div class="col-12">
+    <div class="services-list">
+      <!-- Your accordion code here -->
 
-        <div class="row gy-4">
-
-          <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
             <div class="services-list">
-<div class="list-group">
-            <a href="#" class="list-group-item list-group-item-action">📖My Articles</a>
-            <a href="#" class="list-group-item list-group-item-action">💹Biochemistry & Molecular Biology Books</a>
-            <a href="#" class="list-group-item list-group-item-action">👩‍🎓Lecture Slides & Class Questions</a>
-            <a href="#" class="list-group-item list-group-item-action">🧑‍🏫Education</a>
-            <a href="#" class="list-group-item list-group-item-action">⚙️Files & Tools</a>
+<style>
+  .articles-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .list-group-item {
+    cursor: pointer;
+    white-space: nowrap;
+  }
+
+  #article-list {
+    display: none;
+    border-left: 2px solid #ddd;
+    padding-left: 15px;
+  }
+</style>
+
+<style>
+  .accordion-wrapper {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-bottom: 10px;
+  }
+
+  .accordion-label {
+    cursor: pointer;
+    white-space: nowrap;
+    min-width: 180px;
+  }
+
+  .accordion-content {
+    display: none;
+    max-height: 300px;
+    overflow-y: auto;
+    border-left: 2px solid #ccc;
+    padding-left: 15px;
+    width: 100%;
+  }
+
+  .accordion-content ul {
+    list-style-type: 📄;
+    margin: 0;
+    padding: 0;
+  }
+
+  .accordion-content li {
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.6;
+  }
+  <!-- Updated Accordion UI to fit within Bootstrap container -->
+<div class="row justify-content-center">
+  <div class="col-lg-10">
+    <div class="menu-box p-4 bg-white rounded shadow-sm">
+
+      <style>
+        .category {
+          border-left: 4px solid transparent;
+          margin-bottom: 10px;
+          cursor: pointer;
+          padding: 12px;
+          font-weight: bold;
+          background: #f1f5f9;
+          transition: all 0.3s ease;
+          border-radius: 4px;
+          color: #0f172a;
+        }
+
+        .category.active {
+          border-left: 4px solid #0f766e;
+          background: #e0f2f1;
+        }
+
+        .subcategory {
+          max-height: 0;
+          overflow: hidden;
+          transition: max-height 0.4s ease;
+          margin-left: 10px;
+        }
+
+        .subcategory.open {
+          max-height: 300px;
+          overflow-y: auto;
+        }
+
+        .subcategory a {
+          display: block;
+          padding: 8px 10px;
+          text-decoration: none;
+          color: #374151;
+          border-left: 2px solid #ccc;
+          margin: 2px 0;
+          font-size: 0.95rem;
+        }
+
+        .subcategory a:hover {
+          background: #f0f0f0;
+        }
+      </style>
+
+      <style>
+  .category {
+    background: #f1f5f9;
+    border-left: 3px solid transparent;
+    padding: 10px 15px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+  }
+
+  .category.active {
+    background: #e0f7fa;
+    border-left: 3px solid #2196f3;
+    outline: 1px solid #2196f3;
+  }
+
+  .subcategory {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    display: flex;
+    flex-direction: column;
+    margin-left: 10px;
+    padding-left: 10px;
+    border-left: 2px solid #ccc;
+  }
+
+  .subcategory.open {
+    max-height: 200px;
+    overflow-y: auto;
+  }
+
+  .subcategory a {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+    color: #333;
+    border-left: 2px solid #ddd;
+    margin: 3px 0;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+
+  .subcategory a:hover {
+    background: #f0f0f0;
+  }
+</style>
+
+<div class="category" onclick="toggleSubmenu(this)">📖 My Articles</div>
+<div class="subcategory">
+  <a href="#">مقاله اول: بررسی PGCC</a>
+  <a href="#">مقاله دوم: سیستم‌های مدل‌سازی التهاب</a>
+  <a href="#">مقاله سوم: مسیر M2 در PI3K</a>
+  <a href="#">مقاله چهارم: ژن‌های التهابی</a>
+  <a href="#">مقاله پنجم: اثرات میکروبیوم</a>
+  <a href="#">مقاله ششم: تنظیم اپی‌ژنتیک</a>
+  <a href="#">مقاله هفتم: تحلیل RNA-seq</a>
+  <a href="#">مقاله هشتم: مدل‌سازی سیستمیک</a>
+  <a href="#">مقاله نهم: واکنش‌های ایمنی</a>
+  <a href="#">مقاله دهم: مروری بر IL-6</a>
 </div>
-            </div>
 
-            <h4>Explore my articles, books, slides, and useful tools.</h4>
-            <p></p>
-          </div>
+<div class="category" onclick="toggleSubmenu(this)">✅ Biochemistry & Molecular Biology Books</div>
+<div class="subcategory">
+  <a href="#">Biochem Vol. 1</a>
+  <a href="#">Mol Bio Handbook</a>
+  <a href="#">Protein Structure</a>
+  <a href="#">Enzyme Kinetics</a>
+  <a href="#">DNA Repair</a>
+  <a href="#">RNA Technologies</a>
+  <a href="#">Genomic Tools</a>
+</div>
 
-          <div class="col-lg-8" data-aos="fade-up" data-aos-delay="200">
-            <img src="assets/img/services.jpg" alt="" class="img-fluid services-img">
-            <h3>Scientific Resources & Learning Hub</h3>
-            <p>
-            </p>
-            <ul>
-              <li><i class="bi bi-check-circle"></i> <span>Access to peer-reviewed research articles and original academic content</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Downloadable lecture slides, practice questions, and lab manuals</span></li>
-              <li><i class="bi bi-check-circle"></i> <span>Tools, templates, and resources to support teaching and research</span></li>
-            </ul>
-            </p>
+<div class="category" onclick="toggleSubmenu(this)">🧑‍🏫 Lecture Slides & Class Questions</div>
+<div class="subcategory">
+  <a href="#">Week 1 Slides</a>
+  <a href="#">Midterm Questions</a>
+  <a href="#">Final Review</a>
+  <a href="#">Quiz 1</a>
+  <a href="#">Quiz 2</a>
+  <a href="#">Bonus Sheet</a>
+</div>
+
+<div class="category" onclick="toggleSubmenu(this)">📚 Education</div>
+<div class="subcategory">
+  <a href="#">Course List</a>
+  <a href="#">Curriculum Vitae</a>
+  <a href="#">Teaching Philosophy</a>
+  <a href="#">Educational Certificates</a>
+</div>
+
+<div class="category" onclick="toggleSubmenu(this)">⚙️ Files & Tools</div>
+<div class="subcategory">
+  <a href="#">Excel Templates</a>
+  <a href="#">Analysis Scripts</a>
+  <a href="#">Reference Manager</a>
+  <a href="#">Data Cleaner</a>
+  <a href="#">PDF Compressor</a>
+  <a href="#">LaTeX Templates</a>
+</div>
+
+<script>
+  function toggleSubmenu(element) {
+    const allCategories = document.querySelectorAll('.category');
+    const allSubcategories = document.querySelectorAll('.subcategory');
+    const index = Array.from(allCategories).indexOf(element);
+    const subMenu = allSubcategories[index];
+    const isOpen = subMenu.classList.contains('open');
+    allCategories.forEach(el => el.classList.remove('active'));
+    allSubcategories.forEach(el => el.classList.remove('open'));
+    if (!isOpen) {
+      element.classList.add('active');
+      subMenu.classList.add('open');
+    }
+  }
+</script>
+<script>
+  function toggleSubmenu(element) {
+    const allCategories = document.querySelectorAll('.category');
+    const allSubcategories = document.querySelectorAll('.subcategory');
+
+    const index = Array.from(allCategories).indexOf(element);
+    const subMenu = allSubcategories[index];
+
+    const isOpen = subMenu.classList.contains('open');
+
+    allCategories.forEach(el => el.classList.remove('active'));
+    allSubcategories.forEach(el => el.classList.remove('open'));
+
+    if (!isOpen) {
+      element.classList.add('active');
+      subMenu.classList.add('open');
+    }
+  }
+</script>
+<!-- Include this section in your HTML body -->
+""<section class="container py-4">
+  <div class="row align-items-center">
+    <div class="col-md-8">
+      <h2 class="fw-bold mb-3">About Dr. Omid Joodi</h2>
+      <p class="mb-4">
+        I am a researcher in Biochemistry and Molecular Biology, focused on signaling pathways,
+        inflammation modeling, and biological data analysis. In this section, you can explore my
+        articles, educational materials, tools, and academic resources.
+      </p>
+      <a href="#contact" class="btn btn-success" style="background-color: #b0e5b0; color: #000; border: none; padding: 10px 24px;">
+        Contact Me
+      </a>
+    </div>
+    <div class="col-md-4 text-center">
+      <img src="assets/img/services.webp" alt="Dr. Omid Joodi"
+           class="rounded-circle shadow" style="width: 400px; height: 400px; object-fit: cover;">
+    </div>
+  </div>
+</section>
+
+    </div>
+
+  </div>
+</div>
+
+<!-- Ensure Bootstrap is linked in your <head> -->
+<!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"> -->
+
           </div>
 
         </div>
