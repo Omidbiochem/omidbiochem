@@ -1463,7 +1463,6 @@ verse-en {
   object-fit: cover;
   box-shadow: 0 0 10px rgba(0,0,0,0.2);
 }
-
 /* Contact Button */
 .contact-btn {
   display: inline-block;
@@ -1577,9 +1576,21 @@ verse-en {
   font-size: 30px;  /* تست کن با 28، 32، 36، نه 60 که خیلی زیاده تو موبایل */
   vertical-align: middle;
 }
-
+.bio-message {
+  font-family: 'Shabnam', Tahoma, sans-serif !important;
+  font-size: 18px;
+  line-height: 2.4;
+  direction: rtl;
+  text-align: justify; /* تراز کامل متن */
+  padding: 0.5rem;
 }
 
+@media (max-width: 768px) {
+  .bio-message {
+    font-size: 16px;
+    padding: 0.5rem;
   }
 }
+
+
 
