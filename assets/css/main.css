@@ -1537,4 +1537,35 @@ verse-en {
     width: 80%;
   }
 }
+.floating-seminar-button {
+  position: fixed;
+  top: 25px;
+  left: 350px;
+  background: linear-gradient(135deg, #d2e4d2, #81C784);
+  color: white;
+  padding: 14px 28px;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 50px;
+  text-decoration: none;
+  z-index: 9999;
+  box-shadow: 0 8px 16px rgba(0,0,0,0.25);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease-in-out;
+  
+}
+
+.floating-seminar-button:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #748f75, #cfedd0);
+}
+@media (max-width: 768px) {
+  .floating-seminar-button {
+    left: 20px; /* 📱 برای موبایل نزدیک لبه */
+    padding: 12px 20px;
+    font-size: 14px;
+    border-radius: 40px;
+  }
+}
 

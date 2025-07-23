@@ -778,7 +778,20 @@ document.getElementById("feedbackForm").addEventListener("submit", function(e) {
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 
   <!-- Main JS File -->
+   <script>
+  window.addEventListener('load', function () {
+    setTimeout(function () {
+      const btn = document.getElementById('seminarBtn');
+      btn.style.opacity = '1';
+      btn.style.pointerEvents = 'auto';
+    }, 3000);
+  });
+</script>
+
   <script src="assets/js/main.js"></script>
+<a href="https://example.com/seminar-link" class="floating-seminar-button" target="_blank">
+  لینک شرکت در سمینار🧑‍🏫😊️
+</a>
 
 </body>
 
