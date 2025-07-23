@@ -1563,7 +1563,7 @@ verse-en {
 @media (max-width: 768px) {
   .floating-seminar-button {
     position: fixed;
-    top: 10px;
+    top: 15px;
     left: 20px;
     right: auto;
     padding: 10px 20px;
