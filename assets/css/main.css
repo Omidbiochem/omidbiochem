@@ -1562,10 +1562,24 @@ verse-en {
 }
 @media (max-width: 768px) {
   .floating-seminar-button {
-    left: 20px; /* 📱 برای موبایل نزدیک لبه */
-    padding: 12px 20px;
+    position: fixed;
+    top: 10px;
+    left: 20px;
+    right: auto;
+    padding: 10px 20px;
     font-size: 14px;
     border-radius: 40px;
+    z-index: 9999;
+  }
+}
+
+.emoji {
+  font-size: 30px;  /* تست کن با 28، 32، 36، نه 60 که خیلی زیاده تو موبایل */
+  vertical-align: middle;
+}
+
+}
+
   }
 }
 
