@@ -1,38 +1,43 @@
 <?php
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
 
-  $name = htmlspecialchars(strip_tags(trim($_POST["name"])));
-  $email = filter_var(trim($_POST["email"]), FILTER_SANITIZE_EMAIL);
-  $subject = htmlspecialchars(strip_tags(trim($_POST["subject"])));
-  $message = htmlspecialchars(trim($_POST["message"]));
+$token = '7965471734:AAGpHbfFwDCfqgMArD5oZuJfO7dJ4xYbLvc';
+$chat_id = '6606697793';
 
-  if (empty($name) || empty($subject) || empty($message) || !filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    http_response_code(400);
-    echo "⚠️ لطفاً همه فیلدها را به‌درستی پر کنید.";
-    exit;
-  }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $name = htmlspecialchars(trim($_POST['name'] ?? ''));
+    $message = htmlspecialchars(trim($_POST['message'] ?? ''));
+    $source = htmlspecialchars(trim($_POST['source'] ?? 'نامشخص'));
 
-  $recipient = "OMIDJUDI66@GMAIL.COM";
-  $email_subject = "📬 پیام از سایت - موضوع: $subject";
+    if (!$message) {
+        exit("❌ پیام نمی‌تواند خالی باشد");
+    }
 
-  $email_content  = "👤 نام فرستنده: $name\n";
-  $email_content .= "📧 ایمیل: $email\n";
-  $email_content .= "🖊 موضوع: $subject\n\n";
-  $email_content .= "📨 پیام:\n$message\n\n";
-  $email_content .= "🌐 IP: " . $_SERVER['REMOTE_ADDR'] . "\n";
+    $text = "📩 پیام جدید از $source:\n👤 نام: $name\n📝 پیام: $message";
 
-  $email_headers = "From: $name <$email>";
+    $url = "https://api.telegram.org/bot$token/sendMessage";
+    $data = ['chat_id' => $chat_id, 'text' => $text];
 
-  if (mail($recipient, $email_subject, $email_content, $email_headers)) {
-    http_response_code(200);
-    echo "✅ پیام شما با موفقیت ارسال شد. ممنونم عزیز دلم!";
-  } else {
-    http_response_code(500);
-    echo "❌ ارسال پیام با خطا مواجه شد. لطفاً دوباره تلاش کنید.";
-  }
+    $options = [
+        'http' => [
+            'header'  => "Content-type: application/json\r\n",
+            'method'  => 'POST',
+            'content' => json_encode($data),
+        ],
+    ];
 
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+
+    if ($result !== false) {
+        echo "<script>alert('✅ پیام شما ارسال شد'); window.location.href='../index.html';</script>";
+    } else {
+        echo "<script>alert('❌ ارسال نشد، لطفا بررسی کنید.'); window.location.href='../index.html';</script>";
+    }
 } else {
-  http_response_code(403);
-  echo "⛔ دسترسی غیرمجاز.";
+    echo "🔒 این فرم فقط برای ارسال POST است.";
+    exit;
 }
-?>
+
+

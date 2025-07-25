@@ -115,8 +115,6 @@
      <div style="text-align: center; margin-top: 20px;">
       <div class="verse-wrapper">
   <div class="verse-side right">
-    <!-- تاریخ و ساعت -->
-    <div id="clock"></div>
   </div>
   <audio controls preload="none">
     <source src="assets/audio/welcome.mp3" type="audio/mpeg">
@@ -143,7 +141,7 @@
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
         <h2>Dr. Omid joodi</h2>
-        <p>I'm <span class="typed" data-typed-items="PhD Student,  Biochemistry Researcher, Future AI Scientist, Inquisitive ">PhD Student</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
+        <p>I'm <span class="typed" data-typed-items="Omid joodi☺️🙋‍♂️, PhD Student👨‍🏫,  Biochemistry Researcher 🧬,  Future AI Scientist 🤖,  Inquisitive & Insight-Driven🔍🤔🧠,  Science Communicator🧬🌐🔬,  Knowledge Seeker💡🔍📚,  Curious Mind with a Vision🧠🌟🚀  ">Omid joodi☺️🙋‍♂️</span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span><span class="typed-cursor typed-cursor--blink" aria-hidden="true"></span></p>
       </div>
 
     </section><!-- /Hero Section -->
@@ -705,56 +703,26 @@ I am passionate about innovative thinking, interdisciplinary collaboration, and 
 </style>
 
 <!-- 👇 فرم اصلی -->
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<div class="feedback-box">
-  <h2>♾️ارسال نظر
-  </h2>
-  <form id="feedbackForm">
+ <form id="feedbackForm" action="forms/contact.php" method="POST">
+  <input type="hidden" name="source" value="صفحه اصلی">
+
+  <div class="feedback-box">
+    <h2>♾️ ارسال نظر</h2>
     <input type="text" name="name" placeholder="نام شما" required>
     <textarea name="message" placeholder="نظر شما" rows="5" required></textarea>
-    <button type="submit">📩 ارسال نظر</button>
-  
+    <button type="submit" class="btn btn-primary">📩 ارسال نظر</button>
+  </div>
+</form>
+</p>
+<p class="form-thank">
+</p>
   <p class="form-warning">
   ⚠️ برای ارسال پیام باید فیلتر شکن خود را روشن کنید ⚠️
 </p>
 <p class="form-thank">
   «نظرات و پیشنهادات ارزشمند شما برای من بسیار حائز اهمیت است و به من کمک می‌کند تا در تدریس و ارائه خدمات، بهترین کیفیت را ارائه دهم. از همراهی و بازخوردهای شما صمیمانه سپاسگزارم.»
 </p>
-
-
 </div>
-<script>
-document.getElementById("feedbackForm").addEventListener("submit", function(e) {
-  e.preventDefault();
-
-  const name = this.name.value.trim();
-  const message = this.message.value.trim();
-
-  const token = "7965471734:AAGpHbfFwDCfqgMArD5oZuJfO7dJ4xYbLvc";
-  const chat_id = "6606697793";
-  const text = `📬 پیام جدید از فرم:\n👤 نام: ${name}\n💬 پیام: ${message}`;
-
-  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ chat_id, text })
-  })
-  .then(response => {
-    if (response.ok) {
-      alert("✅ پیام شما با موفقیت ارسال شد.");
-      this.reset();
-    } else {
-      alert(" ❌ خطایی در ارسال پیام رخ داد.فیلتر شکن خود را روشن و دوباره امتحان کنید");
-    }
-  })
-  .catch(error => {
-    alert("⚠️ ارتباط با تلگرام برقرار نشد.");
-    console.error(error);
-  });
-});
-</script>
-</script>
-
     </section><!-- /Contact Section -->
 
   </main>
