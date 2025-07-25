@@ -439,19 +439,13 @@
     <!-- شروع کانتینر فِلِکس برای عکس و فرم -->
 <div style="display: flex; direction: rtl; gap: 30px; align-items: flex-start; margin-top: 40px; font-family: Vazir, Tahoma, sans-serif;">
 
-  <!-- باکس فرم سمت راست -->
-   <!-- باکس فرم سمت راست -->
-<form action="forms/contact.php" method="POST">
-  <input type="hidden" name="source" value="بخش سرویس‌ها">
-  
-
-  <section style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px;">
-  <form action="forms/contact.php" method="POST" style="width: 100%; max-width: 700px;">
+  <!-- 👇 فرم سرویس‌ها با ارسال به تلگرام -->
+<section style="display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 30px;">
+  <form id="serviceForm" style="width: 100%; max-width: 700px;">
     <input type="hidden" name="source" value="بخش سرویس‌ها">
     <div style="text-align: center;">
       <p style="font-size: 20px; line-height: 2; margin-bottom: 15px;">
-        💬 خوشحال می‌شوم نظرات، سوالات یا دیدگاه‌های شما را درباره‌ی این مطلب بدانم.
-        <br>
+         خوشحال می‌شوم نظرات، سوالات یا دیدگاه‌های شما را درباره‌ی این مطلب بدانم.
         شما می‌توانید هر سوال مرتبط با بیوشیمی، مسیر علمی یا تجربه‌های خودتان را در میان بگذارید.
       </p>
       <textarea name="message" placeholder="نظر شما..." required
@@ -462,10 +456,51 @@
         📩 ارسال نظر
       </button>
       <p style="font-size: 13px; color: #888; margin-top: 8px;">
-        🔒 برای ارسال پیام، لطفاً فیلترشکن خود را روشن کنید.
+        🔒 برای ارسال پیام، لطفاً فیلترشکن خود را روشن کنید.🔒
       </p>
     </div>
   </form>
+</section>
+
+<script>
+document.getElementById("serviceForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const form = e.target;
+  const message = form.message.value.trim();
+  const source = form.source.value;
+  const name = "کاربر سایت"; // چون تو این فرم name نداری، یه پیش‌فرض گذاشتم
+
+  if (!message) {
+    alert("⚠️ لطفاً پیام را وارد کنید");
+    return;
+  }
+
+  const token = "7965471734:AAGpHbfFwDCfqgMArD5oZuJfO7dJ4xYbLvc";  // ← توکن ربات
+  const chat_id = "6606697793";                                    // ← آیدی عددی تلگرامت
+  const text = `📩 پیام جدید از ${source}:\n👤 نام: ${name}\n📝 پیام: ${message}`;
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chat_id, text })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.ok) {
+      alert("✅ پیام شما با موفقیت ارسال شد");
+      form.reset();
+    } else {
+      alert("❌ خطا در ارسال پیام");
+      console.error(data);
+    }
+  })
+  .catch(err => {
+    alert("❌ خطای ارتباط با تلگرام");
+    console.error(err);
+  });
+});
+</script>
 
   <img src="assets/img/services.webp" alt="Dr. Omid Joodi"
     style="width: 100%; max-width: 700px; height: auto; margin-top: 30px; border-radius: 12px; object-fit: cover;">

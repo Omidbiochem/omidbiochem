@@ -703,27 +703,62 @@ I am passionate about innovative thinking, interdisciplinary collaboration, and 
 </style>
 
 <!-- 👇 فرم اصلی -->
- <form id="feedbackForm" action="forms/contact.php" method="POST">
+<form id="feedbackForm">
   <input type="hidden" name="source" value="صفحه اصلی">
 
   <div class="feedback-box">
     <h2>♾️ ارسال نظر</h2>
     <input type="text" name="name" placeholder="نام شما" required>
     <textarea name="message" placeholder="نظر شما" rows="5" required></textarea>
-    <button type="submit" class="btn btn-primary">📩 ارسال نظر</button>
+    <button type="submit" class="btn btn-primary">📤 ارسال نظر</button>
   </div>
 </form>
-</p>
+
+<p class="form-warning"> 🔒برای ارسال پیام باید فیلترشکن خود را روشن کنید🔒</p>
+
 <p class="form-thank">
+  «از نظرات و بازخوردهای شما صمیمانه سپاسگزارم»
 </p>
-  <p class="form-warning">
-  ⚠️ برای ارسال پیام باید فیلتر شکن خود را روشن کنید ⚠️
-</p>
-<p class="form-thank">
-  «نظرات و پیشنهادات ارزشمند شما برای من بسیار حائز اهمیت است و به من کمک می‌کند تا در تدریس و ارائه خدمات، بهترین کیفیت را ارائه دهم. از همراهی و بازخوردهای شما صمیمانه سپاسگزارم.»
-</p>
-</div>
-    </section><!-- /Contact Section -->
+
+<script>
+document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+  e.preventDefault();
+
+  const name = this.name.value.trim();
+  const message = this.message.value.trim();
+  const source = this.source.value.trim();
+
+  if (!message) {
+    alert("⚠️ لطفاً پیام را وارد کنید");
+    return;
+  }
+
+  const token = "7965471734:AAGpHbfFwDCfqgMArD5oZuJfO7dJ4xYbLvc"; // ← توکن واقعی‌ات اینجاست
+  const chat_id = "6606697793"; // ← آیدی عددی خودت یا گروه
+  const text = `📩 پیام جدید از ${source}:\n👤 نام: ${name}\n📝 پیام: ${message}`;
+
+  fetch(`https://api.telegram.org/bot${token}/sendMessage`, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ chat_id: chat_id, text: text })
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.ok) {
+      alert("✅ پیام شما با موفقیت ارسال شد");
+      document.getElementById("feedbackForm").reset();
+    } else {
+      alert("❌ خطا در ارسال پیام");
+      console.error(data);
+    }
+  })
+  .catch(err => {
+    alert("❌ خطای ارتباط با تلگرام");
+    console.error(err);
+  });
+});
+</script>
+
 
   </main>
 
